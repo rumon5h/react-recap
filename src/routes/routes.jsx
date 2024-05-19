@@ -7,6 +7,8 @@ import Products from "../pages/Products";
 import Services from "../pages/Services";
 import Login from "../pages/Login";
 import ErrorPage from "../pages/ErrorPage";
+import DashboardLayout from "../layouts/DashboardLayout";
+import Dashboard from "../pages/Dashboard";
 
 export const router = createBrowserRouter([
   {
@@ -40,4 +42,15 @@ export const router = createBrowserRouter([
       }
     ],
   },
+  {
+    path: "dashboard",
+    element: <DashboardLayout/>,
+    errorElement: <ErrorPage/>,
+    children: [
+      {
+        path: "",
+        element: <Dashboard/>
+      }
+    ]
+  }
 ]);
