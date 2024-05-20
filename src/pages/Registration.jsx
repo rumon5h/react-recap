@@ -1,7 +1,11 @@
 import React from 'react';
 import GoogleLogin from '../components/LogInAndRegistetion/GoogleLogin';
+import { Link } from 'react-router-dom';
 
 const Registration = () => {
+    const handleRegistration = (e) => {
+        e.preventDefault();
+    }
     return (
         <form className='flex justify-center h-screen'>
             <div className='flex flex-col w-56 md:w-80 lg:w-96 gap-5 m-10 bg-slate-300 p-5 h-fit'>
@@ -18,6 +22,9 @@ const Registration = () => {
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" /></svg>
             <input type="password" className="grow" name='confirm-password' placeholder="confirm-password" />
             </label>
+
+            <p><span className='text-slate-950 text-[18px]'>Already have an account?</span> <Link className='text-blue-700 font-bold' 
+            to={"/login"}>LogIn</Link></p>
 
             <button type='submit' className='btn btn-primary text-white'>Register</button>
             <GoogleLogin/>
