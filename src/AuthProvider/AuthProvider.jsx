@@ -7,7 +7,7 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
 
-    const googleProvider = GoogleAuthProvider();
+    const googleProvider = new GoogleAuthProvider();
 
     const googleLogin = () => {
         return signInWithPopup(auth, googleProvider);
