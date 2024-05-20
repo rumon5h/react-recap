@@ -1,9 +1,16 @@
 import React from 'react'
 import { FcGoogle } from 'react-icons/fc';
+import useAuth from '../../hooks/useAuth';
 
 const GoogleLogin = () => {
+    const {googleLogin} = useAuth();
+
+    const handleGoogleLogin = () => {
+        googleLogin();
+    }
+
   return (
-    <button className='btn w-full'>
+    <button onClick={handleGoogleLogin} className='btn w-full'>
         <div className='flex items-center gap-2'>
             <FcGoogle size={24}/>
             <p>Google</p>
