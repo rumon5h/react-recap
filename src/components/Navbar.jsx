@@ -1,7 +1,10 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import useAuth from '../hooks/useAuth';
 
 const Navbar = () => {
+
+  const {logOut} = useAuth();
   return (
     <>
       <div className="navbar bg-base-100">
@@ -30,6 +33,7 @@ const Navbar = () => {
             <li><Link to="/products">Products</Link></li>
             <li><Link to="/aboutus">About Us</Link></li>
             <li><Link to="/contactus">Contact Us</Link></li>
+            <li><button onClick={() => logOut()} className='btn btn-ghost'>Log Out</button></li>
             <li><Link to="/registration">Registration</Link></li>
             <li><Link to="/dashboard">Dashboard</Link></li>
             <li>
