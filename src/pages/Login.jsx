@@ -1,11 +1,16 @@
 import React from 'react'
 import GoogleLogin from '../components/LogInAndRegistetion/GoogleLogin';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const Login = () => {
 
-  const {signIn} = useAuth();
+  const {user,signIn} = useAuth();
+
+  if(user){
+    return <Navigate to={"/"}/>
+}
+
   const handleLogIn = (e) => {
     e.preventDefault();
 

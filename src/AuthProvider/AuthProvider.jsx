@@ -13,13 +13,17 @@ const auth = getAuth(app);
 
 const AuthProvider = ({ children }) => {
     const [user, setUser] = useState(null)
+    const [loading, setLoading] = useState(true);
+
     const googleProvider = new GoogleAuthProvider();
 
     const createUser = (email, password) => {
+        setLoading(true);
         return createUserWithEmailAndPassword(auth,email,password);
     }
 
     const signIn = (email, password) => {
+        setLoading(true);
         return signInWithEmailAndPassword(auth, email, password);
     }
 
@@ -36,8 +40,10 @@ const AuthProvider = ({ children }) => {
         const unscubscribe = onAuthStateChanged(auth, currentUser => {
             if(currentUser){
                 setUser(currentUser);
-
+                setLoading(false);
                 console.log(currentUser);
+            }else{
+                setLoading(false);
             }
         })
 
@@ -46,7 +52,7 @@ const AuthProvider = ({ children }) => {
         }
     },[])
 
-    const authInfo = {user, googleLogin, createUser, signIn, logOut};
+    const authInfo = {user, googleLogin, createUser, signIn, logOut,loading};
 
     return (
         <AuthContext.Provider value={authInfo}>

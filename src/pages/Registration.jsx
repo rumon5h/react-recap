@@ -1,28 +1,33 @@
 import React, { useState } from 'react';
 import GoogleLogin from '../components/LogInAndRegistetion/GoogleLogin';
-import { Link } from 'react-router-dom';
+import { Link, Navigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const Registration = () => {
     const [passMatch, setPassMatch] = useState(true);
 
-    const {createUser} = useAuth();
+    const {user,createUser} = useAuth();
+
+    if(user){
+        return <Navigate to={"/"}/>
+    }
 
     const handleRegistration = (e) => {
         e.preventDefault();
 
-        const from = e.target;
+        const form = e.target;
         const email = form.email.value;
         const password = form.password.value;
-        const confirmPassword = form.confirm-password.value;
+        const confirmPassword = form.confirmPassword.value;
 
         if(password != confirmPassword){
             setPassMatch(false);
         }
-        console.log(email, password,confirmPassword);
 
         if(password === confirmPassword && email){
-            createUser(email, password);
+            setPassMatch(true);
+             createUser(email, password);
+            
         }
 
     }
@@ -40,7 +45,7 @@ const Registration = () => {
 
             <label className="input input-bordered flex items-center gap-2">
             <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 16 16" fill="currentColor" className="w-4 h-4 opacity-70"><path fillRule="evenodd" d="M14 6a4 4 0 0 1-4.899 3.899l-1.955 1.955a.5.5 0 0 1-.353.146H5v1.5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1-.5-.5v-2.293a.5.5 0 0 1 .146-.353l3.955-3.955A4 4 0 1 1 14 6Zm-4-2a.75.75 0 0 0 0 1.5.5.5 0 0 1 .5.5.75.75 0 0 0 1.5 0 2 2 0 0 0-2-2Z" clipRule="evenodd" /></svg>
-            <input type="password" className="grow" name='confirm-password' placeholder="confirm-password" />
+            <input type="password" className="grow" name='confirmPassword' placeholder="confirm password" />
             </label>
 
             <p><span className='text-slate-950 text-[18px]'>Already have an account?</span> <Link className='text-blue-700 font-bold' 
