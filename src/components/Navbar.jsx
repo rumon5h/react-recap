@@ -6,6 +6,10 @@ const Navbar = () => {
 
   const {user,logOut} = useAuth();
 
+  const handleLogOut = async() => {
+    await logOut();
+  }
+
   console.log('navbar', user);
   return (
     <>
@@ -50,7 +54,7 @@ const Navbar = () => {
           </ul>
         </div>
         <div className="navbar-end">
-          {user? <li><button onClick={() => logOut()} className='btn btn-ghost'>Log Out</button></li> : <Link to="/login" className="btn">LOGIN</Link>}
+          {user? <li><button onClick={handleLogOut} className='btn btn-ghost'>Log Out</button></li> : <Link to="/login" className="btn">LOGIN</Link>}
         </div>
       </div>
     </>

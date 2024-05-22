@@ -1,17 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import GoogleLogin from '../components/LogInAndRegistetion/GoogleLogin';
-import { Link, Navigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import useAuth from '../hooks/useAuth';
 
 const Login = () => {
 
   const {user,signIn} = useAuth();
+  const navigate = useNavigate();
+  const location = useLocation();
 
-  if(user){
-    return <Navigate to={"/"}/>
-}
+  const from = location.state?.from?.pathname || "/";
 
-  const handleLogIn = (e) => {
+
+  const handleLogIn = async(e) => {
     e.preventDefault();
 
     const from = e.target;
@@ -19,10 +20,18 @@ const Login = () => {
     const password = from.password.value;
     
     if(email && password){
-      signIn(email, password);
+      await signIn(email, password);
+      
     }
     
   }
+
+  useEffect(() => {
+    if(user){
+        navigate(from, {replace: true});
+     }
+},[user,from,navigate]);
+
   return (
     <form
     onSubmit={handleLogIn}
