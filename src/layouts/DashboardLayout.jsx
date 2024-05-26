@@ -1,4 +1,5 @@
 import React from 'react';
+import { Toaster } from 'react-hot-toast';
 import { Link, Outlet } from 'react-router-dom';
 
 const DashboardLayout = () => {
@@ -19,6 +20,7 @@ const DashboardLayout = () => {
           {/* Navbar menu content here */}
           <li><Link to={"/dashboard"}>Dashboard</Link></li>
           <li><Link to={"dashboard/all-products"}>All Products</Link></li>
+          <li><Link to={"dashboard/add-product"}>Add Products</Link></li>
           <li><Link to={"/"}>Home</Link></li>
         </ul>
       </div>
@@ -35,6 +37,7 @@ const DashboardLayout = () => {
           <li><Link to={"/"}>Home</Link></li>
     </ul>
   </div>
+  <Toaster/>
 </div>
     );
 };
