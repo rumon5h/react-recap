@@ -11,14 +11,18 @@ const AllProducts = () => {
         .then(data => {
             setProducts(data)
         })
-    },[])
+    },[]);
+
+    const handleDeletedProduct = (id) => {
+        setProducts(products.filter(product => product.id !== id));
+    }
     return (
         <div>
             <h1 className='text-3xl text-center mt-4'>All Products</h1>
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 justify-items-center'>
                 {
-                    products?.map(product => <DashProductCard key={product.id} product={product}/>)
+                    products?.map(product => <DashProductCard key={product.id} product={product} handleDeletedProduct={handleDeletedProduct}/>)
                 }
             </div>
         </div>
