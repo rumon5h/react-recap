@@ -19,8 +19,8 @@ const DashboardLayout = () => {
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
           <li><Link to={"/dashboard"}>Dashboard</Link></li>
-          <li><Link to={"dashboard/all-products"}>All Products</Link></li>
-          <li><Link to={"dashboard/add-product"}>Add Products</Link></li>
+          <li><Link to={"all-products"}>All Products</Link></li>
+          <li><Link to={"add-product"}>Add Products</Link></li>
           <li><Link to={"/"}>Home</Link></li>
         </ul>
       </div>
@@ -32,8 +32,8 @@ const DashboardLayout = () => {
     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 min-h-full bg-base-200">
       {/* Sidebar content here */}
-      <li><Link to={"/dashboard"}>Dashboard</Link></li>
-          <li><Link to={"/all-products"}>All Products</Link></li>
+      <li><Link to={"dashboard"}>Dashboard</Link></li>
+          <li><Link to={"all-products"}>All Products</Link></li>
           <li><Link to={"/"}>Home</Link></li>
     </ul>
   </div>

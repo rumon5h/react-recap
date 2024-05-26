@@ -14,10 +14,9 @@ const ProductDetails = () => {
             <p className='mt-10'>{price}</p>
             <p className='mt-10'>{description}</p>
             </div>
-            <div className="flex gap-4 align-bottom ">
-                <button className="btn  btn-primary">Listen</button>
-                <button className="btn  btn-primary">Listen</button>
-                <button className="btn  btn-primary">Listen</button>
+            <div className="flex gap-4 justify-end">
+                <button className="btn btn-primary">Buy Now</button>
+             
             </div>
         </div>
     </div>
