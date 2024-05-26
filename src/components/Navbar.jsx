@@ -21,21 +21,15 @@ const Navbar = () => {
             </div>
             <ul tabIndex={0} className="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
             <li><Link to="/">Home</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/products">Products</Link></li>
-            <li><Link to="/aboutus">About Us</Link></li>
-            
             <li><Link to="/dashboard">Dashboard</Link></li>
             </ul>
           </div>
-          <Link to="/" className="btn btn-ghost text-xl">daisyUI</Link>
+          <Link to="/" className="btn btn-ghost text-xl">LOGO</Link>
         </div>
         <div className="navbar-center hidden lg:flex">
           <ul className="menu menu-horizontal px-1">
             
           <li><Link to="/">Home</Link></li>
-            <li><Link to="/services">Services</Link></li>
-            <li><Link to="/products">Products</Link></li>
             <li><Link to="/aboutus">About Us</Link></li>
             
             <li><Link to="/dashboard">Dashboard</Link></li>
