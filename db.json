@@ -1,7 +1,7 @@
 {
   "shoes": [
     {
-      "id": "4",
+      "id": "1",
       "title": "Hoka One One Clifton 7",
       "img": "https://admin.mochishoes.com/product/48-10/660/48-10M14.jpg",
       "description": "The Hoka One One Clifton 7 offers a smooth and comfortable ride, ideal for daily training and long runs.",
@@ -18,10 +18,10 @@
     },
     {
       "id": "3",
-      "title": "Gel-Kayano 27",
+      "title": "Gel-Kayano 70",
       "img": "https://admin.mochishoes.com/product/48-10/660/48-10M14.jpg",
       "description": "ASICS Gel-Kayano 27 provides a balanced and stable run with excellent cushioning and support for long distances.",
-      "price": 160,
+      "price": "10",
       "brand": "ASICS"
     },
     {

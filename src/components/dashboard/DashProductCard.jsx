@@ -31,7 +31,7 @@ const DashProductCard = ({product,handleDeletedProduct}) => {
           <p>${price}</p>
           <div className="flex gap-4 align-bottom ">
                 <button onClick={handleDeleteProduct} className="btn  bg-red-500 text-white">Delete</button>
-                <button className="btn  bg-yellow-400 text-white"><Link to={""}>Update</Link></button>
+                <button className="btn  bg-yellow-400 text-white"><Link to={`/dashboard/update-product/${id}`}>Update</Link></button>
                 <button className="btn  bg-blue-600 text-white"><Link to={""}>See Details</Link></button>
             </div>
         </div>
