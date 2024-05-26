@@ -8,6 +8,11 @@ const DashProductCard = ({product,handleDeletedProduct}) => {
 
     const handleDeleteProduct = async() => {
 
+        const shouldDelete = window.confirm("Are you sure you want to delete?");
+
+        if(!shouldDelete) return;
+
+
         const res = await fetch(`http://localhost:3000/shoes/${id}`, {
             method: 'DELETE',
         });

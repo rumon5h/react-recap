@@ -15,6 +15,10 @@ const AddProduct = () => {
         const id = form.id.value;
 
         const newProduct = {title, description, price, brand, img, id};
+
+        const shouldAdd = window.confirm(`Are you sure you want to add?`);
+        if(!shouldAdd) return;
+        
         await fetch('http://localhost:3000/shoes', {
             method: 'POST',
             headers: {

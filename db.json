@@ -2,10 +2,10 @@
   "shoes": [
     {
       "id": "1",
-      "title": "Hoka One One Clifton 7",
+      "title": "Hoka One One Clifton 9",
       "img": "https://admin.mochishoes.com/product/48-10/660/48-10M14.jpg",
       "description": "The Hoka One One Clifton 7 offers a smooth and comfortable ride, ideal for daily training and long runs.",
-      "price": 140,
+      "price": "140",
       "brand": "Hoka One One"
     },
     {
@@ -47,14 +47,6 @@
       "price": "300",
       "brand": "hoka",
       "img": "https://t3.ftcdn.net/jpg/06/12/00/18/360_F_612001823_TkzT0xmIgagoDCyQ0yuJYEGu8j6VNVYT.jpg"
-    },
-    {
-      "id": "7",
-      "title": "Gel-Kayano 73",
-      "description": "The Hoka One One Clifton 7 offers a smooth and comfortable ride, ideal for daily training and long runs.",
-      "price": "4232",
-      "brand": "Gel",
-      "img": "https://t3.ftcdn.net/jpg/02/77/57/08/360_F_277570841_LunmcG0HGCxeRRKb656wgHmQQEP6GX3S.jpg"
     }
   ]
 }

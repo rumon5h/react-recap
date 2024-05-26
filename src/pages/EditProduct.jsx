@@ -29,6 +29,9 @@ const EditProduct = () => {
 
         const newProduct = {title, description, price, brand, img, id};
 
+        const shouldUpdate = window.confirm(`Are you sure you want to update?`);
+        if(!shouldUpdate) return;
+
         await fetch(`http://localhost:3000/shoes/${oldId}`, {
             method: 'PATCH',
             headers: {
