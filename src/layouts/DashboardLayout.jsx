@@ -1,5 +1,5 @@
 import React from 'react';
-import { Outlet } from 'react-router-dom';
+import { Link, Outlet } from 'react-router-dom';
 
 const DashboardLayout = () => {
     return (
@@ -17,8 +17,9 @@ const DashboardLayout = () => {
       <div className="flex-none hidden lg:block">
         <ul className="menu menu-horizontal">
           {/* Navbar menu content here */}
-          <li><a>Navbar Item 1</a></li>
-          <li><a>Navbar Item 2</a></li>
+          <li><Link to={"/dashboard"}>Dashboard</Link></li>
+          <li><Link to={"/all-products"}>All Products</Link></li>
+          <li><Link to={"/"}>Home</Link></li>
         </ul>
       </div>
     </div>
@@ -29,8 +30,9 @@ const DashboardLayout = () => {
     <label htmlFor="my-drawer-3" aria-label="close sidebar" className="drawer-overlay"></label> 
     <ul className="menu p-4 w-80 min-h-full bg-base-200">
       {/* Sidebar content here */}
-      <li><a>Sidebar Item 1</a></li>
-      <li><a>Sidebar Item 2</a></li>
+      <li><Link to={"/dashboard"}>Dashboard</Link></li>
+          <li><Link to={"/all-products"}>All Products</Link></li>
+          <li><Link to={"/"}>Home</Link></li>
     </ul>
   </div>
 </div>
