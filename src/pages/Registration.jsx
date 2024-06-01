@@ -46,7 +46,7 @@ const Registration = () => {
                         .then((data) => {
                             console.log(data);
                             if (data.acknowledged) {
-                                toast.success("Loged in successfully");
+                                toast.success("Account created successfully");
                             }
                         });
                 }
