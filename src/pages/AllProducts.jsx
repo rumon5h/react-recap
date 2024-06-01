@@ -6,7 +6,7 @@ const AllProducts = () => {
     const [products, setProducts] = useState(null);
 
     useEffect(() => {
-        fetch("http://localhost:3000/shoes")
+        fetch("http://localhost:5000/shoes")
         .then(res => res.json())
         .then(data => {
             setProducts(data)
@@ -22,7 +22,7 @@ const AllProducts = () => {
 
             <div className='grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-10 justify-items-center'>
                 {
-                    products?.map(product => <DashProductCard key={product.id} product={product} handleDeletedProduct={handleDeletedProduct}/>)
+                    products?.map(product => <DashProductCard key={product._id} product={product} handleDeletedProduct={handleDeletedProduct}/>)
                 }
             </div>
         </div>

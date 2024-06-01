@@ -13,7 +13,7 @@ const DashProductCard = ({product,handleDeletedProduct}) => {
         if(!shouldDelete) return;
 
 
-        const res = await fetch(`http://localhost:3000/shoes/${id}`, {
+        const res = await fetch(`http://localhost:5000/shoes/${id}`, {
             method: 'DELETE',
         });
 

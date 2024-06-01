@@ -11,7 +11,6 @@ const EditProduct = () => {
     const [price, setPrice] = useState(oldPrice);
     const [brand, setBrand] = useState(oldBrand);
     const [img, setImg] = useState(oldImg);
-    const [id, setId] = useState(oldId);
 
 
 
@@ -25,14 +24,13 @@ const EditProduct = () => {
         const price = form.price.value;
         const brand = form.brand.value;
         const img = form.img.value;
-        const id = form.id.value;
 
-        const newProduct = {title, description, price, brand, img, id};
+        const newProduct = {title, description, price, brand, img};
 
         const shouldUpdate = window.confirm(`Are you sure you want to update?`);
         if(!shouldUpdate) return;
 
-        await fetch(`http://localhost:3000/shoes/${oldId}`, {
+        await fetch(`http://localhost:5000/shoes/${oldId}`, {
             method: 'PATCH',
             headers: {
                 'Content-Type': 'application/json'

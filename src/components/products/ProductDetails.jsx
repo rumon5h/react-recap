@@ -2,7 +2,7 @@ import React from 'react';
 import { useLoaderData } from 'react-router-dom';
 
 const ProductDetails = () => {
-    const { id, title, description, brand, price, img } = useLoaderData();
+    const { _id, title, description, brand, price, img } = useLoaderData();
 
     
     return (<div className="card lg:card-side bg-base-100 shadow-xl m-10">

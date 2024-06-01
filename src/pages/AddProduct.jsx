@@ -12,14 +12,13 @@ const AddProduct = () => {
         const price = form.price.value;
         const brand = form.brand.value;
         const img = form.img.value;
-        const id = form.id.value;
 
         const newProduct = {title, description, price, brand, img, id};
 
         const shouldAdd = window.confirm(`Are you sure you want to add?`);
         if(!shouldAdd) return;
         
-        await fetch('http://localhost:3000/shoes', {
+        await fetch('http://localhost:5000/shoes', {
             method: 'POST',
             headers: {
                 'Content-Type': 'application/json'
@@ -54,9 +53,6 @@ const AddProduct = () => {
             className="input input-bordered md:w-[350px] lg:w-[400px]" />
              <input required type="text" placeholder="Enter image link" 
             name='img'
-            className="input input-bordered md:w-[350px] lg:w-[400px]" />
-             <input required type="text" placeholder="Enter id" 
-            name='id'
             className="input input-bordered md:w-[350px] lg:w-[400px]" />
 
             <button type='submit' className='btn btn-success text-white'>Submit</button>
