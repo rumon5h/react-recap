@@ -4,7 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const EditProduct = () => {
 
-    const {id: oldId, title: oldTitle, description: oldDescription, img: oldImg, price: oldPrice, brand: oldBrand} = useLoaderData();
+    const {_id: oldId, title: oldTitle, description: oldDescription, img: oldImg, price: oldPrice, brand: oldBrand} = useLoaderData();
 
     const [title, setTitle] = useState(oldTitle);
     const [description, setDescription] = useState(oldDescription);
@@ -78,11 +78,6 @@ const EditProduct = () => {
             value={img}
             onChange={(e) => setImg(e.target.value)}
             name='img'
-            className="input input-bordered md:w-[350px] lg:w-[400px]" />
-             <input required type="text" placeholder="Enter id" 
-             value={id}
-            onChange={(e) => setId(e.target.value)}
-            name='id'
             className="input input-bordered md:w-[350px] lg:w-[400px]" />
 
             <button type='submit' className='btn btn-success text-white'>Submit</button>

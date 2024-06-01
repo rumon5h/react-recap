@@ -3,7 +3,7 @@ import toast from 'react-hot-toast';
 import { Link } from 'react-router-dom';
 
 const DashProductCard = ({product,handleDeletedProduct}) => {
-    const {id, title, description, img, price, brand} = product;
+    const {_id, title, description, img, price} = product;
 
 
     const handleDeleteProduct = async() => {
@@ -13,14 +13,14 @@ const DashProductCard = ({product,handleDeletedProduct}) => {
         if(!shouldDelete) return;
 
 
-        const res = await fetch(`http://localhost:5000/shoes/${id}`, {
+        const res = await fetch(`http://localhost:5000/shoes/${_id}`, {
             method: 'DELETE',
         });
 
         if(res.ok){
          
             toast.success("Product deleted successfully");
-            handleDeletedProduct(id);
+            handleDeletedProduct(_id);
         }
 
         console.log(res);
@@ -36,7 +36,7 @@ const DashProductCard = ({product,handleDeletedProduct}) => {
           <p>${price}</p>
           <div className="flex gap-4 align-bottom ">
                 <button onClick={handleDeleteProduct} className="btn  bg-red-500 text-white">Delete</button>
-                <button className="btn  bg-yellow-400 text-white"><Link to={`/dashboard/update-product/${id}`}>Update</Link></button>
+                <button className="btn  bg-yellow-400 text-white"><Link to={`/dashboard/update-product/${_id}`}>Update</Link></button>
                 <button className="btn  bg-blue-600 text-white"><Link to={""}>See Details</Link></button>
             </div>
         </div>
