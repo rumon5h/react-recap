@@ -4,6 +4,7 @@ import { useLoaderData } from 'react-router-dom';
 
 const EditProduct = () => {
 
+    const token = localStorage.getItem('token');
     const {_id: oldId, title: oldTitle, description: oldDescription, img: oldImg, price: oldPrice, brand: oldBrand} = useLoaderData();
 
     const [title, setTitle] = useState(oldTitle);
@@ -33,7 +34,8 @@ const EditProduct = () => {
         await fetch(`http://localhost:5000/shoes/${oldId}`, {
             method: 'PATCH',
             headers: {
-                'Content-Type': 'application/json'
+                'Content-Type': 'application/json',
+                'Authorization': `Bearer ${token}`
             },
             body: JSON.stringify(newProduct)
         }).then(res => res.json())
