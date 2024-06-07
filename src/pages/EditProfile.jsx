@@ -52,7 +52,7 @@ const EditProfile = () => {
         </label>
         <label className="input input-bordered flex items-center gap-2">
           
-          <input type="text" className="grow" onChange={(e) => setEmail(e.target.value)} required defaultValue={email} name='email' placeholder="Email" />
+          <input type="text" className="grow" onChange={(e) => setEmail(e.target.value)} required defaultValue={email} disabled name='email' placeholder="Email" />
         </label>
         <label className="input input-bordered flex items-center gap-2">
           

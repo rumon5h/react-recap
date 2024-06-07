@@ -23,7 +23,8 @@ const GoogleLogin = () => {
         })
           .then((res) => res.json())
           .then((data) => {
-            console.log(data);
+            console.log(data.token);
+            localStorage.setItem("token", data?.token);
             if (data.acknowledged) {
               toast.success("Account created successfully");
             }
@@ -34,7 +35,7 @@ const GoogleLogin = () => {
 
   return (
     <div onClick={handleGoogleLogin} className='btn w-full'>
-      <div className='flex items-center gap-2'>
+      <div className='flex items-center gap-2' >
         <FcGoogle size={24} />
         <p>Google</p>
       </div>
